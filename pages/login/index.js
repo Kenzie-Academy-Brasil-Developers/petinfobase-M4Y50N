@@ -1,1 +1,1 @@
-/* Desenvolva seu código aqui */
+import AllPosts from "../../scripts/api.js";
