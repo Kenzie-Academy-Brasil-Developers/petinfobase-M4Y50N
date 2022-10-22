@@ -1,26 +1,64 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 :root {
-  --brand100: "hsl(230, 57%, 50%)";
-  --brand200: "hsl(230, 68%, 54%)";
-  --gray100: "hsl(210, 11%, 15%)";
-  --gray200: "hsl(210, 10%, 23%)";
-  --gray300: "hsl(210, 9%, 31%)";
-  --gray400: "hsl(210, 7%, 56%)";
-  --gray500: "hsl(210, 11%, 71%)";
-  --gray600: "hsl(210, 16%, 93%)";
-  --gray700: "hsl(210, 17%, 95%)";
-  --gray800: "hsl(210, 17%, 98%)";
-  --gray900: "hsl(200, 100%, 99%)";
-  --alert100: "hsl(349, 57%, 50%)";
-  --alert200: "hsl(349, 69%, 55%)";
-  --sucess100: "hsl(162, 88%, 26%)";
+	--brand-100: hsl(230, 57%, 50%);
+	--brand-200: hsl(230, 68%, 54%);
+	--gray-100: hsl(210, 11%, 15%);
+	--gray-200: hsl(210, 10%, 23%);
+	--gray-300: hsl(210, 9%, 31%);
+	--gray-400: hsl(210, 7%, 56%);
+	--gray-500: hsl(210, 11%, 71%);
+	--gray-600: hsl(210, 16%, 93%);
+	--gray-700: hsl(210, 17%, 95%);
+	--gray-800: hsl(210, 17%, 98%);
+	--gray-900: hsl(200, 100%, 99%);
+	--alert-100: hsl(349, 57%, 50%);
+	--alert-200: hsl(349, 69%, 55%);
+	--sucess-100: hsl(162, 88%, 26%);
 }
 
 body {
-  font-family: "Inter, sans-serif";
+	font-family: Inter, sans-serif;
+}
+
+.container {
+	max-width: 43rem;
+	margin: 0 auto;
+}
+
+button {
+	cursor: pointer;
+
+	padding: 0.7rem 1rem;
+	border: none;
+	border-radius: 0.3rem;
+
+	transition: all 0.3s ease;
+}
+
+input {
+	padding: 0.7rem 1rem;
+	background-color: var(--gray-600);
+	border: 1px solid var(--gray-500);
+	border-radius: 0.3rem;
+	transition: all 0.3s ease;
+}
+
+input:focus {
+	outline: 1px solid var(--brand-200);
+}
+
+.hidden {
+	display: none;
+}
+
+@media (max-width: 700px) {
+	.container {
+		max-width: 43rem;
+		margin: 0 1rem;
+	}
 }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Petinfo - Cadastro</title>
+		<link rel="stylesheet" href="../../styles/globalStyles.css" />
+		<link rel="stylesheet" href="./grid-img-register.css" />
+		<link rel="stylesheet" href="../../styles/index.css" />
+		<link rel="stylesheet" href="../../styles/form.css" />
+		<link rel="stylesheet" href="../../styles/input.css" />
+		<link rel="stylesheet" href="./register-header.css" />
+	</head>
+	<body>
+		<main class="container">
+			<div class="register-header">
+				<h1>PetInfo</h1>
+				<h2>
+					<span class="high-light">Ooooooba!</span>
+				</h2>
+
+				<div class="register-info">
+					<p>
+						Agora vamos poder contribuir para o bem estar do seu pet por meio do
+						conhecimento
+					</p>
+					<div class="login-grid-img">
+						<div class="img1">
+							<img
+								src="../../assets/Rectangle_3_register.svg"
+								alt="Rectangle"
+							/>
+						</div>
+						<div class="img2">
+							<img
+								src="../../assets/Rectangle_5_register.svg"
+								alt="Rectangle"
+							/>
+						</div>
+						<div class="img3">
+							<img
+								src="../../assets/Rectangle_4_register.svg"
+								alt="Rectangle"
+							/>
+						</div>
+						<div class="img4">
+							<img
+								src="../../assets/Rectangle_2_register.svg"
+								alt="Rectangle"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="register-body">
+				<form action="#">
+					<div class="form-head">
+						<h2>Cadastro</h2>
+						<button class="btn-gray">Voltar para login</button>
+					</div>
+					<div class="form-body">
+						<div class="input-label">
+							<label for="user-login">Usuário</label>
+							<input type="text" id="user-login" placeholder="Usuário" />
+						</div>
+						<div class="input-label">
+							<label for="email-login">Email</label>
+							<input type="text" id="email-login" placeholder="E-mail" />
+						</div>
+						<div class="input-label">
+							<label for="photo-login">Link da foto do Perfil</label>
+							<input
+								type="text"
+								id="photo-login"
+								placeholder="Insira o link aqui"
+							/>
+						</div>
+						<div class="input-label">
+							<label for="pass-login">Senha</label>
+							<input
+								type="password"
+								id="pass-login"
+								placeholder="Digite sua senha"
+							/>
+						</div>
+					</div>
+
+					<div class="form-footer">
+						<button class="btn-primary">Cadastro</button>
+						<button class="btn-gray">Volta para o login</button>
+					</div>
+				</form>
+			</div>
+		</main>
+		<script>
+			document.querySelectorAll("form button").forEach((e) => {
+				e.addEventListener("click", () => {
+					event.preventDefault();
+				});
+			});
+		</script>
+		<script type="module" src="./scripts/index.js"></script>
+	</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Petinfo - Login</title>
+		<link rel="stylesheet" href="./styles/globalStyles.css" />
+		<link rel="stylesheet" href="./styles/grid-img.css" />
+		<link rel="stylesheet" href="./styles/index.css" />
+		<link rel="stylesheet" href="./styles/login-header.css" />
+		<link rel="stylesheet" href="./styles/form.css" />
+		<link rel="stylesheet" href="./styles/input.css" />
+	</head>
+	<body>
+		<main class="container">
+			<div class="login-header">
+				<h1>PetInfo</h1>
+				<h2>
+					<span class="high-light">Amor</span> e
+					<span class="high-light">Carinho</span> em um só lugar
+				</h2>
+
+				<div class="login-info">
+					<p>
+						Todas as informações para melhorar a vida do seu pet em um só lugar
+					</p>
+					<div class="login-grid-img">
+						<div class="img1">
+							<img src="../../assets/Rectangle 2.png" alt="Rectangle" />
+						</div>
+						<div class="img2">
+							<img src="../../assets/Rectangle 3.png" alt="Rectangle" />
+						</div>
+						<div class="img3">
+							<img src="../../assets/Rectangle 4.png" alt="Rectangle" />
+						</div>
+						<div class="img4">
+							<img src="../../assets/Rectangle 5.png" alt="Rectangle" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="login-body">
+				<form action="#">
+					<div class="form-head">
+						<h2>Login</h2>
+					</div>
+					<div class="form-body">
+						<div class="input-label">
+							<label for="email-login">Email</label>
+							<input type="text" id="email-login" placeholder="E-mail" />
+						</div>
+						<div class="input-label">
+							<label for="pass-login">Senha</label>
+							<input
+								type="password"
+								id="pass-login"
+								placeholder="Digite sua senha"
+							/>
+						</div>
+					</div>
+					<p class="validation hidden">validação</p>
+					<div class="form-footer">
+						<button class="btn-primary">Acessar</button>
+						<h5>Ainda não possui conta?</h5>
+						<p>Clicando no botão abaixo, você pode se cadastrar rapidamente</p>
+						<button class="btn-gray">Cadastro</button>
+					</div>
+				</form>
+			</div>
+		</main>
+		<script>
+			document.querySelectorAll("form button").forEach((e) => {
+				e.addEventListener("click", () => {
+					event.preventDefault();
+				});
+			});
+		</script>
+		<script type="module" src="./scripts/index.js"></script>
+	</body>
+</html>

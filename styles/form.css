@@ -1,0 +1,47 @@
+.register-body,
+.login-body {
+	width: 100%;
+}
+
+form {
+	flex: 1;
+	padding: 2rem 0;
+	display: flex;
+	flex-direction: column;
+
+	row-gap: 1.7rem;
+}
+
+.form-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	margin-bottom: 1rem;
+}
+
+.form-body {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+}
+
+.form-footer {
+	display: flex;
+	flex-direction: column;
+	row-gap: 1.7rem;
+}
+
+.form-footer h5 {
+	text-align: center;
+}
+.validation {
+	color: var(--alert-200);
+	text-align: start;
+}
+
+.form-footer p {
+	color: var(--gray-400);
+	font-size: 0.9rem;
+	text-align: center;
+}

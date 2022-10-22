@@ -1,0 +1,19 @@
+.register-header {
+	display: flex;
+	flex-direction: column;
+
+	row-gap: 1.3rem;
+}
+
+.register-header h1 {
+	font-size: 2rem;
+}
+
+.register-header h2 .high-light {
+	color: var(--brand-100);
+}
+
+.register-info p {
+	color: var(--gray-400);
+	line-height: 1.7rem;
+}
