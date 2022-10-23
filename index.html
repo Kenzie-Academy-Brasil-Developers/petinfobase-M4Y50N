@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="./styles/index.css" />
 		<link rel="stylesheet" href="./styles/login-header.css" />
 		<link rel="stylesheet" href="./styles/form.css" />
+		<link rel="stylesheet" href="./styles/toast.css" />
 		<link rel="stylesheet" href="./styles/input.css" />
 	</head>
 	<body>
@@ -27,16 +28,16 @@
 					</p>
 					<div class="login-grid-img">
 						<div class="img1">
-							<img src="../../assets/Rectangle 2.png" alt="Rectangle" />
+							<img src="../../src/imgs/Rectangle 2.png" alt="Rectangle" />
 						</div>
 						<div class="img2">
-							<img src="../../assets/Rectangle 3.png" alt="Rectangle" />
+							<img src="../../src/imgs/Rectangle 3.png" alt="Rectangle" />
 						</div>
 						<div class="img3">
-							<img src="../../assets/Rectangle 4.png" alt="Rectangle" />
+							<img src="../../src/imgs/Rectangle 4.png" alt="Rectangle" />
 						</div>
 						<div class="img4">
-							<img src="../../assets/Rectangle 5.png" alt="Rectangle" />
+							<img src="../../src/imgs/Rectangle 5.png" alt="Rectangle" />
 						</div>
 					</div>
 				</div>
@@ -49,7 +50,7 @@
 					<div class="form-body">
 						<div class="input-label">
 							<label for="email-login">Email</label>
-							<input type="text" id="email-login" placeholder="E-mail" />
+							<input type="email" id="email-login" placeholder="E-mail" />
 						</div>
 						<div class="input-label">
 							<label for="pass-login">Senha</label>
@@ -62,7 +63,7 @@
 					</div>
 					<p class="validation hidden">validação</p>
 					<div class="form-footer">
-						<button class="btn-primary">Acessar</button>
+						<button type="subtmit" class="btn-primary">Acessar</button>
 						<h5>Ainda não possui conta?</h5>
 						<p>Clicando no botão abaixo, você pode se cadastrar rapidamente</p>
 						<button class="btn-gray">Cadastro</button>
@@ -70,13 +71,7 @@
 				</form>
 			</div>
 		</main>
-		<script>
-			document.querySelectorAll("form button").forEach((e) => {
-				e.addEventListener("click", () => {
-					event.preventDefault();
-				});
-			});
-		</script>
-		<script type="module" src="./scripts/index.js"></script>
+
+		<script type="module" src="./scripts/login.js"></script>
 	</body>
 </html>

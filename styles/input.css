@@ -27,3 +27,7 @@
 .btn-gray:hover {
 	background-color: var(--gray-700);
 }
+
+.error {
+	outline: 1px solid var(--alert-200);
+}
