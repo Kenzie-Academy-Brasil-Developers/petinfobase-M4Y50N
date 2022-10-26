@@ -1,6 +1,6 @@
-import { login } from "./requests.js";
+import { register } from "./requests.js";
 
-const eventLogin = () => {
+const eventRegister = () => {
 	const form = document.querySelector("form");
 	const elements = [...form.elements];
 
@@ -10,13 +10,13 @@ const eventLogin = () => {
 		const body = {};
 
 		elements.forEach((elem) => {
-			if (elem.tagName === "INPUT" && elem.value !== "") {
-				body[elem.type] = elem.value;
+			if (elem.tagName == "INPUT" && elem.value !== "") {
+				body[elem.id] = elem.value;
 			}
 		});
 
-		await login(body);
+		await register(body);
 	});
 };
 
-eventLogin();
+eventRegister();

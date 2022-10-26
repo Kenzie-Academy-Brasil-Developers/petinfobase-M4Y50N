@@ -15,12 +15,22 @@ const toast = (title, message, waitmsg, type) => {
 			const titleContainer = document.createElement("div");
 			titleContainer.classList.add("toast-title");
 
-			if (title == "Sucesso!") {
-				container.classList.add("successToast");
-				icon.src = "./src/imgs/check.png";
+			if (type !== "login") {
+				if (title == "Sucesso!") {
+					container.classList.add("successToast");
+					icon.src = "../../src/imgs/check.png";
+				} else {
+					container.classList.add("errorToast");
+					icon.src = "../../src/imgs/errorIcon.png";
+				}
 			} else {
-				container.classList.add("errorToast");
-				icon.src = "./src/imgs/errorIcon.png";
+				if (title == "Sucesso!") {
+					container.classList.add("successToast");
+					icon.src = "./src/imgs/check.png";
+				} else {
+					container.classList.add("errorToast");
+					icon.src = "./src/imgs/errorIcon.png";
+				}
 			}
 
 			const h3 = document.createElement("h3");

@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="../../styles/index.css" />
 		<link rel="stylesheet" href="../../styles/form.css" />
 		<link rel="stylesheet" href="../../styles/input.css" />
+		<link rel="stylesheet" href="../../styles/toast.css" />
 		<link rel="stylesheet" href="./register-header.css" />
 	</head>
 	<body>
@@ -57,49 +58,45 @@
 				<form action="#">
 					<div class="form-head">
 						<h2>Cadastro</h2>
-						<button class="btn-gray">Voltar para login</button>
+						<a href="../../index.html" class="a-gray">Voltar para login</a>
 					</div>
 					<div class="form-body">
 						<div class="input-label">
-							<label for="user-login">Usuário</label>
-							<input type="text" id="user-login" placeholder="Usuário" />
+							<label for="username">Usuário</label>
+							<input type="text" id="username" placeholder="Usuário" required />
 						</div>
 						<div class="input-label">
 							<label for="email-login">Email</label>
-							<input type="text" id="email-login" placeholder="E-mail" />
+							<input type="text" id="email" placeholder="E-mail" required />
 						</div>
 						<div class="input-label">
-							<label for="photo-login">Link da foto do Perfil</label>
+							<label for="avatar">Link da foto do Perfil</label>
 							<input
 								type="text"
-								id="photo-login"
+								id="avatar"
 								placeholder="Insira o link aqui"
+								required
 							/>
 						</div>
 						<div class="input-label">
-							<label for="pass-login">Senha</label>
+							<label for="password">Senha</label>
 							<input
 								type="password"
-								id="pass-login"
+								id="password"
 								placeholder="Digite sua senha"
+								required
 							/>
 						</div>
 					</div>
 
 					<div class="form-footer">
-						<button class="btn-primary">Cadastro</button>
-						<button class="btn-gray">Volta para o login</button>
+						<button type="submit" class="btn-primary">Cadastro</button>
+						<a href="../../index.html" class="a-gray">Volta para o login</a>
 					</div>
 				</form>
 			</div>
 		</main>
-		<script>
-			document.querySelectorAll("form button").forEach((e) => {
-				e.addEventListener("click", () => {
-					event.preventDefault();
-				});
-			});
-		</script>
-		<script type="module" src="./scripts/index.js"></script>
+
+		<script type="module" src="../../scripts/register.js"></script>
 	</body>
 </html>

@@ -32,6 +32,10 @@ form {
 	row-gap: 1.7rem;
 }
 
+.form-footer a {
+	width: 100%;
+}
+
 .form-footer h5 {
 	text-align: center;
 }

@@ -28,7 +28,7 @@ async function login(body) {
 			body: JSON.stringify(body),
 		});
 
-		if (true) {
+		if (request.ok) {
 			const response = await request.json();
 
 			toast(
@@ -48,4 +48,34 @@ async function login(body) {
 	}
 }
 
-export { login };
+async function register(body) {
+	try {
+		const request = await fetch(`${baseURL}/users/create`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(body),
+		});
+
+		if (request.ok) {
+			const response = await request.json();
+
+			toast(
+				"Sucesso!",
+				"Cadastro efetuado com sucesso! ",
+				"Aguarde você já vai ser redirecionado para página de login!",
+				"register"
+			);
+			setTimeout(() => {
+				window.location.replace("/index.html");
+			}, 3000);
+		} else {
+			toast("Erro!", "Email ou Usuário já existentes", "register");
+		}
+	} catch (err) {
+		toast("Erro!", "Algo deu errado");
+	}
+}
+
+export { login, register };
