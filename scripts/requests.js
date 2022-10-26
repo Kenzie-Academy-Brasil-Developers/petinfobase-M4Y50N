@@ -78,4 +78,20 @@ async function register(body) {
 	}
 }
 
-export { login, register };
+async function posts() {
+	try {
+		const request = await fetch(`${baseURL}/posts`, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: token,
+			},
+		});
+
+		console.log(await request.json());
+	} catch (err) {
+		toast("Erro!", "Algo deu errado");
+	}
+}
+
+export { login, register, posts };
