@@ -92,7 +92,22 @@ async function posts() {
 			},
 		});
 
-		return await request.json();
+		try {
+			const userToken = `Bearer ${
+				JSON.parse(localStorage.getItem("user")).token
+			}`;
+			const user = await fetch(`${baseURL}/users/profile`, {
+				method: "GET",
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: userToken,
+				},
+			});
+
+			return [await request.json(), await user.json()];
+		} catch (err) {
+			toast("Erro!", "Algo deu errado");
+		}
 	} catch (err) {
 		toast("Erro!", "Algo deu errado");
 	}
