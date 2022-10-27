@@ -1,0 +1,36 @@
+.feed-title {
+	width: 100%;
+	margin: 2rem 0;
+	padding: 1rem 0px;
+	text-align: center;
+	background-color: var(--gray-600);
+}
+
+#posts {
+	padding: 1rem 1.5rem;
+}
+
+.post {
+	display: flex;
+	flex-direction: column;
+
+	row-gap: 1rem;
+}
+
+.post-head {
+	display: flex;
+	align-items: center;
+
+	column-gap: 1rem;
+}
+
+.post-head .profile {
+	display: flex;
+	align-items: center;
+	column-gap: 0.5rem;
+}
+
+.profile img {
+	width: 24px;
+	height: 24px;
+}
