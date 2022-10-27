@@ -4,10 +4,32 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../../styles/animation.css" />
+		<link rel="stylesheet" href="../../styles/globalStyles.css" />
+		<link rel="stylesheet" href="../../styles/index.css" />
+		<link rel="stylesheet" href="./feed-nav.css" />
 		<title>Feed</title>
 	</head>
 	<body>
-		<ul id="posts"></ul>
+		<header>
+			<nav class="navbar">
+				<div>
+					<h1 class="logo">PetInfo</h1>
+				</div>
+				<div class="hamburger open"></div>
+				<div>
+					<div class="links hidden">
+						<button>Criar Publicação</button>
+						<div class="avatar">
+							<img src="../../src/imgs/check.png" alt="avatar" />
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<ul id="posts"></ul>
+		</main>
 		<script type="module" src="../../scripts/posts.js"></script>
 	</body>
 </html>

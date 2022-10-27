@@ -1,4 +1,5 @@
 import toast from "./toast.js";
+import { getLocalStorage } from "./localStorage.js";
 
 //render posts
 const token =
@@ -37,6 +38,9 @@ async function login(body) {
 				"Aguarde você já vai ser redirecionado!",
 				"login"
 			);
+
+			localStorage.setItem("user", JSON.stringify(response));
+
 			setTimeout(() => {
 				window.location.replace("./pages/feed/feed.html");
 			}, 3000);
@@ -88,7 +92,7 @@ async function posts() {
 			},
 		});
 
-		console.log(await request.json());
+		return await request.json();
 	} catch (err) {
 		toast("Erro!", "Algo deu errado");
 	}
