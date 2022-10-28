@@ -12,8 +12,8 @@ header {
 }
 
 .hamburger {
-	width: 14px;
-	height: 14px;
+	width: 24px;
+	height: 24px;
 
 	margin-left: auto;
 }
@@ -44,6 +44,9 @@ header {
 .avatar img {
 	width: 40px;
 	height: 40px;
+
+	border-radius: 50%;
+	border: 1px solid var(--gray-100);
 }
 
 .close {

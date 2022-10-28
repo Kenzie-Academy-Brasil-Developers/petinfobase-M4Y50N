@@ -4,6 +4,7 @@ const toast = (title, message, waitmsg, type) => {
 			type == "login" ? loginError("Email ou senha inválidos") : type;
 			break;
 		case "Sucesso!":
+			loginSuccess();
 			const body = document.querySelector("body");
 
 			const container = document.createElement("div");
@@ -58,6 +59,20 @@ const loginError = (message) => {
 			elem.classList.add("error");
 			validation.classList.remove("hidden");
 			validation.textContent = message;
+		}
+	});
+};
+
+const loginSuccess = () => {
+	const validation = document.querySelector(".validation");
+
+	const form = document.querySelector("form");
+	const elements = [...form.elements];
+
+	elements.forEach((elem) => {
+		if (elem.tagName == "INPUT") {
+			elem.classList.remove("error");
+			validation.classList.add("hidden");
 		}
 	});
 };

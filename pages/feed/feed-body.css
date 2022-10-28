@@ -37,6 +37,19 @@
 .profile img {
 	width: 24px;
 	height: 24px;
+
+	border-radius: 50%;
+	border: 1px solid var(--gray-100);
+}
+
+.post-head span {
+	width: 2px;
+	height: 24px;
+	background-color: var(--gray-500);
+}
+
+.post-data {
+	color: var(--gray-400);
 }
 
 .post-ger {
