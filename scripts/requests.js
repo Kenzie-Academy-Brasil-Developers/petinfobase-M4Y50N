@@ -1,4 +1,5 @@
 import toast from "./toast.js";
+import { render } from "./render.js";
 import { getLocalStorage } from "./localStorage.js";
 
 //render posts
@@ -62,10 +63,10 @@ async function register(body) {
 				window.location.replace("/index.html");
 			}, 3000);
 		} else {
-			toast("Erro!", "Email ou Usuário já existentes", "register");
+			toast("Erro!", "Email ou Usuário já existentes", "", "register");
 		}
 	} catch (err) {
-		toast("Erro!", "Algo deu errado");
+		toast("Erro!", "Algo deu errado", "", "");
 	}
 }
 
@@ -91,7 +92,7 @@ async function posts() {
 
 			return [await request.json(), await user.json()];
 		} catch (err) {
-			toast("Erro!", "Algo deu errado");
+			toast("Erro!", "Algo deu errado", "", "posts");
 		}
 	} catch (err) {
 		toast("Erro!", "Algo deu errado");
@@ -108,9 +109,77 @@ async function editPost(body, id) {
 			},
 			body: JSON.stringify(body),
 		});
+
+		toast(
+			"Sucesso!",
+			"Post editado com sucesso!",
+			"Seu post já está no feed",
+			"edit"
+		);
+		setTimeout(() => {
+			render();
+		}, 3000);
 	} catch (err) {
-		toast("Erro!", "Algo deu errado");
+		toast("Erro!", "Algo deu errado", "", "edit");
 	}
 }
 
-export { login, register, posts, editPost };
+async function deletePost(id) {
+	try {
+		const request = await fetch(`${baseURL}/posts/${id}`, {
+			method: "DELETE",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: token,
+			},
+		});
+
+		toast(
+			"Sucesso!",
+			"Post deletado com sucesso!",
+			"Seu post foi apagado",
+			"delete"
+		);
+		setTimeout(() => {
+			render();
+		}, 3000);
+	} catch (err) {
+		toast("Erro!", "Algo deu errado", "", "");
+	}
+}
+
+async function createPost(body) {
+	try {
+		const request = await fetch(`${baseURL}/posts/create`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: token,
+			},
+			body: JSON.stringify(body),
+		});
+
+		const response = await request.json();
+		console.log(body);
+		if (request.ok) {
+			toast(
+				"Sucesso!",
+				"Post criado com sucesso!",
+				"Sua publicação foi postada",
+				"delete"
+			);
+
+			setTimeout(() => {
+				render();
+			}, 3000);
+		} else {
+			toast("Erro!", "Algo deu errado", "", "");
+		}
+
+		return response;
+	} catch (err) {
+		toast("Erro!", "Algo deu errado", "", "");
+	}
+}
+
+export { login, register, posts, editPost, deletePost, createPost };

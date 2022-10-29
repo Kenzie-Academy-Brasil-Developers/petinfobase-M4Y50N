@@ -1,5 +1,7 @@
 import { render } from "./render.js";
 import { editPost as EditPost } from "./requests.js";
+import { deletePost as DeletePost } from "./requests.js";
+import { createPost as CreatePost } from "./requests.js";
 
 const body = document.querySelector("body");
 
@@ -87,7 +89,6 @@ function editPost(post) {
 	inputTitle.type = "text";
 	inputTitle.id = "edit-titulo";
 	inputTitle.name = "edit-titulo";
-	inputTitle.value = titleContent;
 
 	textArea.name = "edit-content";
 	textArea.id = "edit-content";
@@ -117,8 +118,6 @@ function editPost(post) {
 		modalContainer.classList.add("hidden");
 
 		modalContainer.querySelector(".modal").innerHTML = "";
-
-		render();
 	});
 
 	const post_head = document.createElement("div"),
@@ -136,6 +135,135 @@ function editPost(post) {
 	return [post_head, post_body, post_footer];
 }
 
+function deletePost(post) {
+	const deletePulb = document.createElement("div"),
+		title = document.createElement("h3"),
+		p = document.createElement("p"),
+		btnCancel = document.createElement("button"),
+		btnDelete = document.createElement("button");
+
+	deletePulb.classList.add("deletePulb");
+	deletePulb.textContent = "Confirmação de Exclusão";
+
+	const close = document.createElement("div");
+	close.addEventListener("click", () => {
+		const modalContainer = document.querySelector(".modal-container");
+		modalContainer.classList.add("hidden");
+
+		modalContainer.querySelector(".modal").innerHTML = "";
+	});
+	close.classList.add("close-modal");
+	close.textContent = "X";
+
+	title.textContent = "Tem certeza que deseja excluir este post?";
+
+	p.textContent =
+		"Essa ação não poderá ser desfeita, então pedimos que tenha cautela antes de concluir";
+
+	btnCancel.textContent = "Cancelar";
+	btnCancel.addEventListener("click", () => {
+		const modalContainer = document.querySelector(".modal-container");
+		modalContainer.classList.add("hidden");
+
+		modalContainer.querySelector(".modal").innerHTML = "";
+	});
+	btnDelete.textContent = "Sim, excluir este post";
+	btnDelete.addEventListener("click", async () => {
+		const id = post.dataset["postId"];
+
+		await DeletePost(id);
+
+		const modalContainer = document.querySelector(".modal-container");
+		modalContainer.classList.add("hidden");
+
+		modalContainer.querySelector(".modal").innerHTML = "";
+	});
+
+	const post_head = document.createElement("div"),
+		post_body = document.createElement("div"),
+		post_footer = document.createElement("div");
+
+	post_head.classList.add("post-head");
+	post_body.classList.add("post-body");
+	post_footer.classList.add("post-footer");
+
+	post_head.append(deletePulb, close);
+	post_body.append(title, p);
+	post_footer.append(btnCancel, btnDelete);
+
+	return [post_head, post_body, post_footer];
+}
+
+function createPost() {
+	const create = document.createElement("div"),
+		labelTitle = document.createElement("h3"),
+		labelContent = document.createElement("h3"),
+		inputTitle = document.createElement("input"),
+		textArea = document.createElement("textarea"),
+		btnCancel = document.createElement("button"),
+		btnCreate = document.createElement("button");
+
+	create.classList.add("create");
+	create.textContent = "Criando novo post";
+
+	const close = document.createElement("div");
+	close.addEventListener("click", () => {
+		const modalContainer = document.querySelector(".modal-container");
+		modalContainer.classList.add("hidden");
+
+		modalContainer.querySelector(".modal").innerHTML = "";
+	});
+	close.classList.add("close-modal");
+	close.textContent = "X";
+
+	inputTitle.type = "text";
+	inputTitle.id = "create-titulo";
+	inputTitle.name = "create-titulo";
+
+	textArea.name = "create-content";
+	textArea.id = "create-content";
+
+	labelTitle.textContent = "Título do Post";
+	labelContent.textContent = "Conteúdo do Post";
+
+	btnCancel.textContent = "Cancelar";
+	btnCancel.addEventListener("click", () => {
+		const modalContainer = document.querySelector(".modal-container");
+		modalContainer.classList.add("hidden");
+
+		modalContainer.querySelector(".modal").innerHTML = "";
+	});
+	btnCreate.textContent = "Publicar";
+	btnCreate.addEventListener("click", async () => {
+		const body = {};
+		body["title"] = document.querySelector("#create-titulo").value;
+		body["content"] = textArea.value;
+
+		console.log(body);
+
+		await CreatePost(body);
+
+		const modalContainer = document.querySelector(".modal-container");
+		modalContainer.classList.add("hidden");
+
+		modalContainer.querySelector(".modal").innerHTML = "";
+	});
+
+	const post_head = document.createElement("div"),
+		post_body = document.createElement("div"),
+		post_footer = document.createElement("div");
+
+	post_head.classList.add("post-head");
+	post_body.classList.add("post-body");
+	post_footer.classList.add("post-footer");
+
+	post_head.append(create, close);
+	post_body.append(labelTitle, inputTitle, labelContent, textArea);
+	post_footer.append(btnCancel, btnCreate);
+
+	return [post_head, post_body, post_footer];
+}
+
 function addEventClick(element) {
 	element.addEventListener("click", (event) => {
 		openModal();
@@ -145,12 +273,18 @@ function addEventClick(element) {
 		const modal = document.querySelector(".modal");
 		const eventTarget = event.target;
 		if (eventTarget.dataset["show"]) {
-			const post = event.target.parentNode;
+			const post = eventTarget.parentNode;
 			modal.append(...showPost(post));
 		} else if (eventTarget.dataset["edit"]) {
-			const post = event.target.parentNode.parentNode.parentNode;
+			const post = eventTarget.parentNode.parentNode.parentNode;
 			modal.append(...editPost(post));
 			auto_grow(document.querySelector("#edit-content"));
+		} else if (eventTarget.dataset["delete"]) {
+			const post = eventTarget.parentNode.parentNode.parentNode;
+			modal.append(...deletePost(post));
+		} else {
+			modal.append(...createPost());
+			auto_grow(document.querySelector("#create-content"));
 		}
 	});
 }

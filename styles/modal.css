@@ -17,7 +17,7 @@
 	row-gap: 2rem;
 
 	width: calc(100% - 50px);
-	max-width: 400px;
+	max-width: 800px;
 
 	border-radius: 0.3rem;
 
@@ -32,7 +32,7 @@
 }
 
 .modal h3 {
-	font-size: 0.9rem;
+	font-size: 1.1rem;
 }
 
 .modal .close-modal {
@@ -55,7 +55,8 @@
 	background-color: var(--gray-500);
 }
 
-.modal #edit-content {
+.modal #edit-content,
+.modal #create-content {
 	resize: none;
 	overflow: hidden;
 	min-height: 50px;
@@ -67,7 +68,8 @@
 	transition: all 0.3s ease;
 }
 
-.modal #edit-content:focus {
+.modal #edit-content:focus,
+.modal #create-content:focus {
 	outline: 1px solid var(--brand-200);
 }
 
@@ -89,4 +91,8 @@
 }
 .modal .post-footer button:last-child:hover {
 	background-color: var(--brand-100);
+}
+
+.modal .post-footer button[data-delete="delete"] {
+	background-color: var(--alert-200);
 }

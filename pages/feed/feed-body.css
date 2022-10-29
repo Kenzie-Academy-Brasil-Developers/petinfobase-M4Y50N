@@ -4,7 +4,7 @@
 	margin-top: 0;
 	padding: 1rem 0px;
 	text-align: center;
-	background-color: var(--gray-600);
+	background-color: var(--gray-800);
 }
 
 #posts {
@@ -55,6 +55,7 @@
 .post-ger {
 	display: flex;
 	column-gap: 0.3rem;
+	margin-left: auto;
 }
 
 .post-ger button {

@@ -1,5 +1,4 @@
 import { posts } from "./requests.js";
-import { hamburger as Hamburger } from "./animation.js";
 import { addEventClick } from "./modal.js";
 import whichMonth from "./months.js";
 
@@ -15,27 +14,30 @@ function renderNav() {
 
 	divLogo.appendChild(h1);
 
-	const hamburger = document.createElement("div");
-	hamburger.className = "hamburger open";
-
 	const divLinks = document.createElement("div"),
 		links = document.createElement("links"),
 		btn = document.createElement("button"),
 		divAvatar = document.createElement("div"),
-		avatar = document.createElement("img");
+		avatar = document.createElement("img"),
+		sair = document.createElement("button");
 
-	links.className = "links hidden";
+	links.className = "links";
 	btn.textContent = "Criar Publicação";
+	addEventClick(btn);
 	divAvatar.classList.add("avatar");
 	avatar.src = "#";
 	avatar.alt = "Avatar";
+	sair.textContent = "Sair";
+	sair.addEventListener("click", () => {
+		window.location = "/index.html";
+		localStorage.removeItem("user");
+	});
 
 	divLinks.appendChild(links);
-	divAvatar.appendChild(avatar);
+	divAvatar.append(avatar, sair);
 	links.append(btn, divAvatar);
 
-	navbar.append(divLogo, hamburger, divLinks);
-	Hamburger();
+	navbar.append(divLogo, divLinks);
 }
 
 export async function render() {
@@ -86,6 +88,7 @@ export async function render() {
 		btn1.dataset.edit = x.id;
 		btn2.textContent = "Excluir";
 		addEventClick(btn2);
+		btn2.dataset.delete = x.id;
 		post_ger.append(btn1, btn2);
 
 		x.user.id == user.id

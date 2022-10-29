@@ -18,19 +18,13 @@ header {
 	margin-left: auto;
 }
 .links {
-	height: 100px;
 	background-color: var(--gray-900);
-	position: absolute;
-	overflow: hidden;
-	top: 55px;
-	left: 0px;
-	right: 0px;
 	margin-top: 1rem;
 	padding: 20px 10px;
 
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	column-gap: 1rem;
 }
 
 .links.hidden {
@@ -41,12 +35,23 @@ header {
 	animation: hamburgerAppear 0.3s ease;
 }
 
+.avatar {
+	display: flex;
+	align-items: center;
+	column-gap: 1rem;
+}
+
 .avatar img {
 	width: 40px;
 	height: 40px;
 
 	border-radius: 50%;
 	border: 1px solid var(--gray-100);
+}
+
+.navbar button:hover {
+	color: var(--gray-900);
+	background-color: var(--brand-100);
 }
 
 .close {
