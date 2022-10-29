@@ -45,3 +45,42 @@ form {
 	font-size: 0.9rem;
 	text-align: center;
 }
+
+.form-footer .btn-submit {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+}
+
+.btn-submit span {
+	display: flex;
+	align-items: center;
+}
+
+.loading {
+	animation: RotateLoad 1s ease;
+}
+
+@keyframes RotateLoad {
+	0% {
+		opacity: 0;
+		transform: rotate(0deg);
+	}
+	25% {
+		opacity: 0.25;
+		transform: rotate(90deg);
+	}
+	50% {
+		opacity: 0.5;
+		transform: rotate(180deg);
+	}
+	75% {
+		opacity: 0.75;
+		transform: rotate(270deg);
+	}
+	100% {
+		opacity: 1;
+		transform: rotate(360deg);
+	}
+}
