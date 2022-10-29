@@ -1,3 +1,8 @@
-import { posts } from "./requests.js";
+import { render } from "./render.js";
+import { getLocalStorage } from "./localStorage.js";
 
-await posts();
+if (!getLocalStorage()) {
+	window.location = "/index.html";
+}
+
+render();

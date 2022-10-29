@@ -1,4 +1,11 @@
+.login-container {
+	display: flex;
+	align-items: center;
+	column-gap: 2rem;
+}
+
 .login-header {
+	width: 300px;
 	display: flex;
 	flex-direction: column;
 
@@ -16,4 +23,13 @@
 .login-info p {
 	color: var(--gray-400);
 	line-height: 1.7rem;
+}
+
+.login-body {
+	width: 300px;
+	height: max-content;
+	padding: 0.7rem 1rem;
+	border: 1px solid var(--gray-600);
+	border-radius: 0.3rem;
+	box-shadow: 0px 0px 3px var(--gray-700);
 }

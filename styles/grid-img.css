@@ -35,10 +35,9 @@
 	padding: 2rem 0;
 	display: grid;
 	gap: 1.5rem;
-	grid-template-rows: auto auto auto;
-	grid-template-columns: auto auto;
+	grid-template-rows: auto auto;
+	grid-template-columns: auto auto auto;
 	grid-template-areas:
-		"img1 img4"
-		"img2 img4"
-		"img3 img3";
+		"img1 img2 img4"
+		"img3 img3 img4";
 }
