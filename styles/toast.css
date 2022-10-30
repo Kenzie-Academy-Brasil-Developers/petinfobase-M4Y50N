@@ -33,15 +33,19 @@
 
 @keyframes toastIt {
 	0% {
+		right: 10px;
 		bottom: -100px;
 	}
 	25% {
+		right: 10px;
 		bottom: 10px;
 	}
 	50% {
+		right: 10px;
 		bottom: 10px;
 	}
 	100% {
+		right: 10px;
 		bottom: -100px;
 	}
 }

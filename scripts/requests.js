@@ -160,7 +160,7 @@ async function createPost(body) {
 		});
 
 		const response = await request.json();
-		console.log(body);
+
 		if (request.ok) {
 			toast(
 				"Sucesso!",
