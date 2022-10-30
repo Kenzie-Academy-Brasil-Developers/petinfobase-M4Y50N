@@ -93,6 +93,10 @@
 	background-color: var(--brand-100);
 }
 
-.modal .post-footer button[data-delete="delete"] {
-	background-color: var(--alert-200);
+.modal .post-footer .delete-post {
+	background-color: var(--alert-200) !important;
+}
+
+.modal .post-footer .delete-post:hover {
+	background-color: var(--alert-100) !important;
 }

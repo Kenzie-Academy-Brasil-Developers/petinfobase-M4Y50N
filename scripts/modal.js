@@ -168,6 +168,7 @@ function deletePost(post) {
 		modalContainer.querySelector(".modal").innerHTML = "";
 	});
 	btnDelete.textContent = "Sim, excluir este post";
+	btnDelete.classList.add("delete-post");
 	btnDelete.addEventListener("click", async () => {
 		const id = post.dataset["postId"];
 
