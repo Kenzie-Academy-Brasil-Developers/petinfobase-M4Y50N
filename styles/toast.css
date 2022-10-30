@@ -12,7 +12,7 @@
 	color: var(--grey-100);
 	border-radius: 3px;
 	background-color: var(--gray-900);
-	box-shadow: 0px 0px 15px var(--gray-700);
+	box-shadow: 0px 0px 15px var(--gray-500);
 	animation: toastIt 3000ms ease-in forwards;
 }
 
@@ -33,15 +33,19 @@
 
 @keyframes toastIt {
 	0% {
+		right: 10px;
 		bottom: -100px;
 	}
 	25% {
+		right: 10px;
 		bottom: 10px;
 	}
 	50% {
+		right: 10px;
 		bottom: 10px;
 	}
 	100% {
+		right: 10px;
 		bottom: -100px;
 	}
 }
@@ -53,5 +57,5 @@
 
 .errorToast h3 {
 	font-size: 0.95rem;
-	color: var(--sucess-100);
+	color: var(--alert-100);
 }

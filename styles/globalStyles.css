@@ -29,6 +29,10 @@ body {
 	align-items: center;
 }
 
+ul {
+	list-style: none;
+}
+
 .container {
 	max-width: 43rem;
 	margin: 0 auto;
@@ -61,12 +65,25 @@ input:focus {
 }
 
 .hidden {
-	display: none;
+	display: none !important;
+}
+
+.disable {
+	pointer-events: none;
+	background-color: var(--gray-300) !important;
+	box-shadow: 0px 0px 3px var(--gray-600);
 }
 
 @media (max-width: 700px) {
 	.container {
 		max-width: 43rem;
 		margin: 0 1rem;
+	}
+
+	.hamburger {
+		width: 24px;
+		height: 24px;
+
+		margin-left: auto;
 	}
 }

@@ -15,85 +15,112 @@
 	</head>
 	<body>
 		<main class="container">
-			<div class="register-header">
-				<h1>PetInfo</h1>
-				<h2>
-					<span class="high-light">Ooooooba!</span>
-				</h2>
+			<div class="register-container">
+				<div class="register-header">
+					<h1>PetInfo</h1>
+					<h2>
+						<span class="high-light">Ooooooba!</span>
+					</h2>
 
-				<div class="register-info">
-					<p>
-						Agora vamos poder contribuir para o bem estar do seu pet por meio do
-						conhecimento
-					</p>
-					<div class="login-grid-img">
-						<div class="img1">
-							<img
-								src="../../src/imgs/Rectangle_3_register.svg"
-								alt="Rectangle"
-							/>
-						</div>
-						<div class="img2">
-							<img
-								src="../../src/imgs/Rectangle_5_register.svg"
-								alt="Rectangle"
-							/>
-						</div>
-						<div class="img3">
-							<img
-								src="../../src/imgs/Rectangle_4_register.svg"
-								alt="Rectangle"
-							/>
-						</div>
-						<div class="img4">
-							<img
-								src="../../src/imgs/Rectangle_2_register.svg"
-								alt="Rectangle"
-							/>
+					<div class="register-info">
+						<p>
+							Agora vamos poder contribuir para o bem estar do seu pet por meio
+							do conhecimento
+						</p>
+						<div class="login-grid-img">
+							<div class="img1">
+								<img
+									src="../../src/imgs/Rectangle_3_register.svg"
+									alt="Rectangle"
+								/>
+							</div>
+							<div class="img2">
+								<img
+									src="../../src/imgs/Rectangle_5_register.svg"
+									alt="Rectangle"
+								/>
+							</div>
+							<div class="img3">
+								<img
+									src="../../src/imgs/Rectangle_4_register.svg"
+									alt="Rectangle"
+								/>
+							</div>
+							<div class="img4">
+								<img
+									src="../../src/imgs/Rectangle_2_register.svg"
+									alt="Rectangle"
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="register-body">
-				<form action="#">
-					<div class="form-head">
-						<h2>Cadastro</h2>
-						<a href="../../index.html" class="a-gray">Voltar para login</a>
-					</div>
-					<div class="form-body">
-						<div class="input-label">
-							<label for="username">Usuário</label>
-							<input type="text" id="username" placeholder="Usuário" required />
+				<div class="register-body">
+					<form action="#">
+						<div class="form-head">
+							<h2>Cadastro</h2>
+							<a href="../../index.html" class="a-gray">Voltar para login</a>
 						</div>
-						<div class="input-label">
-							<label for="email-login">Email</label>
-							<input type="text" id="email" placeholder="E-mail" required />
+						<div class="form-body">
+							<div class="input-label">
+								<label for="username">Usuário</label>
+								<input
+									type="text"
+									id="username"
+									placeholder="Usuário"
+									required
+								/>
+							</div>
+							<div class="input-label">
+								<label for="email-login">Email</label>
+								<input type="text" id="email" placeholder="E-mail" required />
+							</div>
+							<div class="input-label">
+								<label for="avatar">Link da foto do Perfil</label>
+								<input
+									type="text"
+									id="avatar"
+									placeholder="Insira o link aqui"
+									required
+								/>
+							</div>
+							<div class="input-label">
+								<label for="password">Senha</label>
+								<input
+									type="password"
+									id="password"
+									placeholder="Digite sua senha"
+									required
+								/>
+							</div>
 						</div>
-						<div class="input-label">
-							<label for="avatar">Link da foto do Perfil</label>
-							<input
-								type="text"
-								id="avatar"
-								placeholder="Insira o link aqui"
-								required
-							/>
-						</div>
-						<div class="input-label">
-							<label for="password">Senha</label>
-							<input
-								type="password"
-								id="password"
-								placeholder="Digite sua senha"
-								required
-							/>
-						</div>
-					</div>
 
-					<div class="form-footer">
-						<button type="submit" class="btn-primary">Cadastro</button>
-						<a href="../../index.html" class="a-gray">Volta para o login</a>
-					</div>
-				</form>
+						<div class="form-footer">
+							<button type="submit" class="btn-primary btn-submit disable">
+								<div class="content">Cadastro</div>
+								<span class="hidden loading"
+									><svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										fill="currentColor"
+										class="bi bi-arrow-clockwise"
+										viewBox="0 0 16 16"
+									>
+										<path
+											fill-rule="evenodd"
+											d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
+										/>
+										<path
+											d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
+										/>
+									</svg>
+								</span>
+							</button>
+							<a href="../../index.html" class="a-gray">Volta para o login</a>
+						</div>
+					</form>
+				</div>
 			</div>
 		</main>
 
