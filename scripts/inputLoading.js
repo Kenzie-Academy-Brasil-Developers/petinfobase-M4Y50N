@@ -1,7 +1,7 @@
 //Verify input emptyness
 function isInputDisable(elements) {
 	elements = [...elements];
-	console.log(elements);
+
 	const filteredArray = elements.filter((elem) => {
 		return elem.tagName == "INPUT";
 	});

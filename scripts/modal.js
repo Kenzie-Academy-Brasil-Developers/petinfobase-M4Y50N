@@ -219,9 +219,11 @@ function createPost() {
 	inputTitle.type = "text";
 	inputTitle.id = "create-titulo";
 	inputTitle.name = "create-titulo";
+	inputTitle.placeholder = "Digite o título do seu post aqui...";
 
 	textArea.name = "create-content";
 	textArea.id = "create-content";
+	textArea.placeholder = "Digite o conteúdo do seu post aqui...";
 
 	labelTitle.textContent = "Título do Post";
 	labelContent.textContent = "Conteúdo do Post";
