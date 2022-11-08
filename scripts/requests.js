@@ -4,9 +4,7 @@ import { getLocalStorage } from "./localStorage.js";
 
 //render posts
 const token = `Bearer ${
-		(localStorage.getItem("user") || "") != ""
-			? JSON.parse(localStorage.getItem("users")).token
-			: ""
+		getLocalStorage() != "" ? getLocalStorage().token : ""
 	}`,
 	baseURL = "http://localhost:3333";
 
