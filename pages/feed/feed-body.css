@@ -12,11 +12,15 @@
 }
 
 .post {
+	padding: 1rem 2rem;
 	margin-bottom: 3rem;
 	display: flex;
 	flex-direction: column;
 
 	row-gap: 1rem;
+	border-radius: 0.5rem;
+	background-color: var(--gray-800);
+	box-shadow: 0 2px 5px var(--gray-400);
 }
 
 .post-head {
@@ -83,7 +87,7 @@
 	text-overflow: ellipsis;
 }
 
-.post-body p {
+.post .post-body p {
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;

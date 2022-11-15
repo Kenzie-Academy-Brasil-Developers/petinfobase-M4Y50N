@@ -81,22 +81,25 @@ async function posts() {
 			},
 		});
 
-		try {
-			const userToken = `Bearer ${getLocalStorage().token}`;
-			const user = await fetch(`${baseURL}/users/profile`, {
-				method: "GET",
-				headers: {
-					"Content-Type": "application/json",
-					Authorization: userToken,
-				},
-			});
-
-			return [await request.json(), await user.json()];
-		} catch (err) {
-			toast("Erro!", "Algo deu errado", "", "posts");
-		}
+		return await request.json();
 	} catch (err) {
 		toast("Erro!", "Algo deu errado");
+	}
+}
+async function getUser() {
+	try {
+		const userToken = `Bearer ${getLocalStorage().token}`;
+		const user = await fetch(`${baseURL}/users/profile`, {
+			method: "GET",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: userToken,
+			},
+		});
+
+		return await user.json();
+	} catch (err) {
+		console.log(err);
 	}
 }
 
@@ -183,4 +186,4 @@ async function createPost(body) {
 	}
 }
 
-export { login, register, posts, editPost, deletePost, createPost };
+export { login, register, posts, getUser, editPost, deletePost, createPost };

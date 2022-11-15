@@ -1,8 +1,8 @@
-import { posts } from "./requests.js";
+import { posts, getUser } from "./requests.js";
 import { addEventClick } from "./modal.js";
 import whichMonth from "./months.js";
 
-function renderNav() {
+async function renderNav() {
 	const navbar = document.querySelector(".navbar");
 	navbar.innerHTML = "";
 
@@ -24,9 +24,11 @@ function renderNav() {
 	links.className = "links";
 	btn.textContent = "Criar Publicação";
 	addEventClick(btn);
+	const user = await getUser();
+	avatar.src = user.avatar;
+	console.log(avatar);
+	avatar.alt = user.username;
 	divAvatar.classList.add("avatar");
-	avatar.src = "#";
-	avatar.alt = "Avatar";
 	sair.textContent = "Sair";
 	sair.addEventListener("click", () => {
 		window.location = "/index.html";
@@ -42,9 +44,10 @@ function renderNav() {
 
 export async function render() {
 	//render navbar
-	renderNav();
+	await renderNav();
 
-	const [allPosts, user] = [...(await posts())];
+	const allPosts = [...(await posts())],
+		user = await getUser();
 
 	const ul = document.querySelector("#posts");
 	ul.innerHTML = "";
@@ -60,9 +63,8 @@ export async function render() {
 		const profile = document.createElement("div");
 		profile.classList.add("profile");
 		const img = document.createElement("img");
-		img.src = user.avatar;
-		const avatar = document.querySelector(".avatar img");
-		avatar.src = user.avatar;
+		img.src = x.user.avatar;
+
 		const name = document.createElement("div");
 		name.classList.add("post-user");
 		name.textContent = x.user.username;

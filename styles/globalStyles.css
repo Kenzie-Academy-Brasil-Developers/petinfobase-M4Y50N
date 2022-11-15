@@ -66,6 +66,7 @@ input:focus {
 
 .hidden {
 	display: none !important;
+	opacity: 0;
 }
 
 .disable {
